@@ -1,1 +1,0 @@
-Repositório para projetos de estudo e de recursos do Javascript e frameworks.
