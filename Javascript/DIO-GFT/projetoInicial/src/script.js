@@ -1,14 +1,29 @@
 const imagemPokemon = document.querySelector('.pokemon-image');
-let contador = 1;
 
 function proximoPokemon() {
-    contador++;
-    imagemPokemon.src = `pokemon${contador}.png`;
+    if (imagemPokemon.src == `./img/charmander.avif`) {
+        imagemPokemon.src = `./img/charmeleon.avif`;
+    }
+    else if (imagemPokemon.src == `./img/charmeleon.avif`) {
+        imagemPokemon.src = `./img/charizard.avif`;
+    }
+    else {
+        imagemPokemon.src = `./img/charmander.avif`;
+    }
+
+    console.log("funcionando");
 }
 
 function pokemonAnterior() {
-    if (contador > 1) {
-        contador--;
-        imagemPokemon.src = `pokemon${contador}.png`;
+    if (imagemPokemon.src == `./img/charizard.avif`) {
+        imagemPokemon.src = `./img/charmeleon.avif`;
+    }
+    else if (imagemPokemon.src == `./img/charmeleon.avif`) {
+        imagemPokemon.src = `./img/charmander.avif`;
+    }
+    else {
+        imagemPokemon.src = `./img/charizard.avif`;
     }
 }
+
+document.getElementById("proximoPokemonButton").addEventListener("click", proximoPokemon());

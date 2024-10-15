@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Criador de Heróis</title>
+</head>
+<body>
+    <!-- Initial button to show form, and start the game-->
+    <button id="buttonCriarHeroi" onclick="criarHeroi()">Iniciar Jogo</button>
+
+    <!-- Form to create hero -->
+    <div id="formHero">
+        <!-- hero name -->
+        <label for="nome">Hero name:</label>
+        <input type="text" id="nome">
+        
+        <!-- hero type -->
+        <label for="tipo">Hero type:</label>
+        <select id="tipo">
+            <option value="mage">Mage</option>
+            <option value="warrior">Warrior</option>
+            <option value="archer">Archer</option>
+        </select>
+        
+        <!-- button to save hero -->
+        <button onclick="salvarHeroi()">Salvar</button>
+    </div>
+    <script type="module" src="./src/script.js"></script>
+</body>
+</html>

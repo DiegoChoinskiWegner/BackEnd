@@ -25,7 +25,7 @@ if ($nome !== 'Diego'){
 }
 
 //Loop
-for ($i = 0, $i < 6; $i++;){
+for ($i = 0; $i < 6; $i++){
     echo $i;
     echo '<hr>';
 }
@@ -33,8 +33,9 @@ for ($i = 0, $i < 6; $i++;){
 while($t < 6){
     echo $t;
     echo '<hr>';
-    $t++
+    $t++;
 }
+
 //Funções 
 function printNumero($n){
     echo $n;
@@ -54,7 +55,7 @@ class Pessoa{
     }
 
     public function printPessoa(){
-        echo $this->nome
+        echo $this->nome;
         echo $this->cpf;
         echo $this->rg;
     }
@@ -63,9 +64,7 @@ class Pessoa{
 
 }
 
-
 $pessoa = new Pessoa("Diego", '98736457', '27635422')
-
 
 
 
