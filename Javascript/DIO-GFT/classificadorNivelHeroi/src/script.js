@@ -1,11 +1,15 @@
+import Hero, { Warrior, Mage, Archer } from "./hero.js";
+//import { Warrior, Mage, Archer } from "./heroTypes.js";
+
+const showHero = document.getElementById('showHero');
 const formHero = document.getElementById('formHero');
 
 
 
 function criarHeroi() {
-    //formHero.style.display = 'block';
-    console.log("teste")
+    formHero.style.display = 'flex';
 }
+
 
 function salvarHeroi() {
     const nome = document.getElementById('nome').value;
@@ -14,10 +18,12 @@ function salvarHeroi() {
 
     // Criando o herói com base no tipo
     let novoHeroi;
-    if (tipo === 'mage') {
-        novoHeroi = new Hero(nome, level, 'Mage');
-    } else if (tipo === 'warrior') {
-        novoHeroi = new Hero(nome, level, 'Warrior');
+    if (tipo == 'mage') {
+        novoHeroi = new Hero(nome, level, new Mage());
+    } else if (tipo == 'warrior') {
+        novoHeroi = new Hero(nome, level, new Warrior());
+    } else if (tipo == 'archer') {
+        novoHeroi = new Hero(nome, level, new Archer());
     } else {
         console.error('Tipo de herói inválido');
         return;
@@ -28,5 +34,7 @@ function salvarHeroi() {
 }
 
 
-document.getElementById('criarHeroiButton').addEventListener('click', HTMLButtonElement);
+
+
+document.getElementById('criarHeroiButton').addEventListener('click', criarHeroi);
 document.getElementById('salvarHeroiButton').addEventListener('click', salvarHeroi);

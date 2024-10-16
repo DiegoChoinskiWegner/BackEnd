@@ -5,25 +5,28 @@
 </head>
 <body>
     <!-- Initial button to show form, and start the game-->
-    <button id="buttonCriarHeroi" onclick="criarHeroi()">Iniciar Jogo</button>
+    <h1>Crie seu Herói</h1>
+    
+    <!-- Botão para exibir o formulário de criação do herói -->
+    <button id="criarHeroiButton">Criar Herói</button>
 
-    <!-- Form to create hero -->
-    <div id="formHero">
-        <!-- hero name -->
-        <label for="nome">Hero name:</label>
-        <input type="text" id="nome">
-        
-        <!-- hero type -->
-        <label for="tipo">Hero type:</label>
-        <select id="tipo">
-            <option value="mage">Mage</option>
+    <!-- Formulário de criação do herói (inicialmente oculto) -->
+    <form id="formHero" style="display:none;">
+        <label for="nome">Nome do Herói:</label>
+        <input type="text" id="nome" name="nome">
+        <label for="tipo">Tipo de Herói:</label>
+        <select id="tipo" name="tipo">
             <option value="warrior">Warrior</option>
+            <option value="mage">Mage</option>
             <option value="archer">Archer</option>
-        </select>
-        
-        <!-- button to save hero -->
-        <button onclick="salvarHeroi()">Salvar</button>
+        </select><br><br>
+        <button type="button" id="salvarHeroiButton">Salvar Herói</button>
+    </form>
+
+    <div>
+
     </div>
     <script type="module" src="./src/script.js"></script>
 </body>
+
 </html>
