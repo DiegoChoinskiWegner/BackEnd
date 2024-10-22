@@ -117,6 +117,7 @@ class Hero {
         }
     }
 
+    // Método para ganhar experiencia
     ganharExperiencia(exp) {
         this.experiencia += exp;
         while (this.experiencia >= this.experienciaNecessaria()) {
@@ -126,11 +127,13 @@ class Hero {
         this.salvar(); // Atualiza o herói no sessionStorage
     }
 
+    // Método para subir de level
     levelUp() {
         this.level++;
         console.log(`${this.nome} subiu para o nível ${this.level}!`);
     }
 
+    // Método para controle de Rank do Herói
     rankUp(level) {
         if (level >= 4){
             this.rank = "Ferro";
@@ -149,6 +152,7 @@ class Hero {
         }
     }
 
+    // Salva o heroi na sessão do navegador
     saveHero() {
         sessionStorage.setItem('hero', JSON.stringify(this));
     }
@@ -163,6 +167,7 @@ class Hero {
         return null;
     }
 
+    // Método que exibe os dados do herói
     showHero() {
         console.log(`Hero name: ${this.name}, Level: ${this.level}`);
         console.log(`Type: ${this.heroClass.constructor.name}`); // Use constructor.name for class name
@@ -172,6 +177,23 @@ class Hero {
         console.log(`Defense: ${this.defense}`);
         console.log(`Experience: ${this.experience}`);
     }
+
+    // Método Ataque, utilizado para criar a dinânima entre personagens do jogo
+    atack_method(){
+        if (theroClassipo == 'mage') {
+            console.log(`The ${this.name}, of type ${this.heroClass}, atack using Magic Spells`);
+        } else if (tipo == 'warrior') {
+            console.log(`The ${this.name}, of type ${this.heroClass}, atack using your Blade`);
+        } else if (tipo == 'archer') {
+            console.log(`The ${this.name}, of type ${this.heroClass}, atack using your Bow and Arrows`);
+        } else {
+            console.error('invalid Atack');
+            return;
+        }
+        
+    }
+
+
 }
 
 export default Hero;
