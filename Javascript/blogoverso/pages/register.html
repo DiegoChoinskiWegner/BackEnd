@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../index.js"></script>
+    <script type="module" src="../scirpts/auth.js"></script>
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js"></script>
+</head>
+<body>
+    <nav>
+        <a href="./index.html">Index</a>
+        <a href="./search.html">Search</a>
+        <a href="./dashboard.html">Dashboard</a>
+        <a href="./settings.html">Settings</a>
+        <a href="./profile.html">Profile</a>
+        <a href="./register.html">Register</a>
+    </nav>
+    <div class="register-form">
+        <h1>Register</h1>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="reg-username" name="reg-username" required><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="reg-password" name="reg-password" required><br><br>
+            <button onclick="register()">Cadastrar</button>
+            <button onclick="window.location.href='index.html'">Voltar</button>
+        </form>
+    </div>
+
+
+</body>
+</html>
