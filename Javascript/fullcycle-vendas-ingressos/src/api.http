@@ -1,0 +1,70 @@
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+    "email": "partner1@user.com",
+    "password": "secret"
+}
+
+###
+POST http://localhost:3000/partners/register
+Content-Type: application/json
+
+{
+    "name": "PArtner 1",
+    "email": "partner1@user.com",
+    "password": "secret",
+    "company_name": "Company test"
+
+}
+
+###
+POST http://localhost:3000/customers/register
+Content-Type: application/json
+
+{
+    "name": "Joaquim Teixeira",
+    "email": "customer1@user.com",
+    "password": "secret",
+    "adress": "7th avenue",
+    "telefone": "+55(81)99999-9876" 
+    
+}
+
+###
+POST http://localhost:3000/partners/events
+Content-Type: application/json
+Authorization: Bearer
+{
+    "name": "UFC 313",
+    "description": "Fighting main event Ankalaev vs Poatan",
+    "date": "08/03/2025",
+    "location": "California"
+}
+
+###
+GET http://localhost:3000/partners/events
+
+###
+GET http://localhost:3000/partners/events/1
+###
+GET http://localhost:3000/events
+
+###
+GET http://localhost:3000/events/1
+
+###
+POST http://localhost:3000/ticket
+Content-Type: application/json
+
+{
+    "id": "1",
+    "value": "$350,00",
+    "description": "A2 Sector",
+    "date": "08/03/2025",
+    "location": "California Square Garden"
+
+}
+
+###
+POST http://localhost:3000/auth/login
