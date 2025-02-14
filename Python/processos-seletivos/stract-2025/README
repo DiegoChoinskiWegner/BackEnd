@@ -1,0 +1,39 @@
+# Projeto: Stract API - 2025
+
+Este projeto é responsável por coletar dados de diversas plataformas de publicidade através de uma API, processá-los e gerar um resumo com insights das campanhas publicitárias, com a capacidade de exportar os dados para um arquivo CSV.
+
+## Descrição
+
+A aplicação realiza as seguintes tarefas:
+
+1. **Acessa dados de uma API**: Obtém a lista de dados de plataformas de anúncios disponíveis.
+2. **Obtém campos de dados**: Para cada plataforma, são recuperados os campos específicos dos anúncios.
+3. **Obtém dados de contas**: Para cada plataforma, as contas de usuário são listadas e seus dados são recuperados.
+4. **Acessa e processa insights**: A aplicação faz uma consulta à API para obter os insights de cada conta em cada plataforma
+5. **Exportação de dados**: Os dados processados são exportados no formato csv, com suporte a múltiplas plataformas e contas.
+
+## Funcionalidades
+
+- Obtenção de dados de plataformas de publicidade.
+- Geração de relatório com insights de contas e plataformas.
+- Cálculo de valores como "Cost per Click" quando ausentes.
+- Exportação de resultados para CSV.
+- Agrupamento e somatório dos dados numéricos por plataforma e conta.
+
+## Implementações futuras
+
+- Download direto do arquivo csv
+- Implementação de interface gráfica caso necessário
+- Construção de script bash para subir o container direto em nuvem
+
+## Como Usar
+
+### Pré-requisitos
+
+- Python 3.12.1
+- Bibliotecas externas: `requests`, `csv`, `flask`, `dotenv`
+
+Você pode instalar as bibliotecas necessárias com o comando:
+
+```bash
+pip install requests

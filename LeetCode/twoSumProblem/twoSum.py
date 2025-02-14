@@ -1,3 +1,55 @@
+class Solution:
+    def towSum(self, nums: list[int], target: int) -> list[int]:
+
+        num_index_map = {}
+
+        for i, num in enumerate (nums):
+            complement = target -num
+
+            if complement in num_index_map:
+                return [num_index_map[complement], i]
+        num_index_map[num] = i
+        return []
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 """
 PROBLEM = Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
 
