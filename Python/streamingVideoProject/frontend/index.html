@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head><title>Transmissão de Vídeo</title></head>
+<body>
+  <video id="localVideo" autoplay muted></video>
+  <canvas id="canvas"></canvas>
+
+  <script>
+    const ws = new WebSocket("ws://localhost:8000/ws");
+    const video = document.getElementById('localVideo');
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+
+    navigator.mediaDevices.getUserMedia({ video: true }).then(stream => {
+      video.srcObject = stream;
+      const sendFrame = () => {
+        ctx.drawImage(video, 0, 0, 320, 240);
+        const frame = canvas.toDataURL("image/webp");
+        ws.send(frame);
+        requestAnimationFrame(sendFrame);
+      };
+      sendFrame();
+    });
+
+    ws.onmessage = (event) => {
+      const img = new Image();
+      img.onload = () => ctx.drawImage(img, 0, 0, 320, 240);
+      img.src = event.data;
+    };
+  </script>
+</body>
+</html>
