@@ -1,0 +1,41 @@
+# Binários do Go
+/bin
+/build
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Arquivos temporários
+*.log
+*.out
+*.tmp
+
+# Cache do Go
+/pkg
+*.test
+coverage.out
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# Arquivos de ambiente
+.env
+.env.*.local
+
+# Dependências
+vendor/
+
+# IDEs e editores
+.vscode/
+.idea/
+*.swp
+*.swo
+*.DS_Store
+Thumbs.db
+
+# Outros
+node_modules/
